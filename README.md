@@ -146,5 +146,5 @@ Built with modern web technologies to make process documentation effortless and 
 ---
 
 <div align="center">
-  Made with ❤️ for better documentation
+  Made with ❤️ for better documentation by Siya 
 </div>
