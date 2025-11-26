@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "ScribeFlow - Process Recorder",
+  "version": "1.0",
+  "description": "A browser extension to record user clicks with screenshots and steps, then export the process documentation.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

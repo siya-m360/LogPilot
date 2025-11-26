@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScribeFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            width: 500px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-title">
+                    <div class="logo">S</div>
+                    <h1>ScribeFlow</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="start-btn" class="btn btn-start">
+                        <!-- SVG Icon will be inserted by JS -->
+                        Start Recording
+                    </button>
+                    <button id="stop-btn" class="btn btn-stop" style="display: none;">
+                         <!-- SVG Icon will be inserted by JS -->
+                        Stop Recording
+                    </button>
+                    <div class="dropdown-container">
+                        <button id="export-btn" class="btn btn-export" disabled>
+                            <!-- SVG Icon will be inserted by JS -->
+                            Export
+                            <!-- Chevron Icon will be inserted by JS -->
+                        </button>
+                        <div id="export-menu" class="dropdown-menu" style="display: none;">
+                            <div class="dropdown-items">
+                                <a href="#" class="dropdown-item" data-format="docx">As Word (.docx)</a>
+                                <a href="#" class="dropdown-item" data-format="pdf">As PDF (.pdf)</a>
+                                <a href="#" class="dropdown-item" data-format="md">As Markdown (.zip)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="notification" class="notification" style="display: none;"></div>
+
+    <main class="main-content">
+        <h2 class="main-title">Recorded Steps</h2>
+        <div id="steps-container" class="steps-container">
+            <!-- Steps will be rendered here by JS -->
+        </div>
+    </main>
+
+    <!-- Vendor Scripts for Exporting. Ensure these files are in a 'vendor' folder. -->
+    <script src="./vendor/html2canvas.min.js"></script>
+    <script src="./vendor/docx.js"></script>
+    <script src="./vendor/jspdf.umd.min.js"></script>
+    <script src="./vendor/jszip.min.js"></script>
+
+    <!-- Services (Global Functions) -->
+    <script src="./services/wordExporter.js"></script>
+    <script src="./services/pdfExporter.js"></script>
+    <script src="./services/markdownExporter.js"></script>
+
+    <!-- Application Entry Point -->
+    <script src="./popup.js"></script>
+</body>
+</html>
